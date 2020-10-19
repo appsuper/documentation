@@ -1,5 +1,3 @@
-{% load static humanize %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,19 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="{% static 'app-assets/images/logo/logo-light.png' %}">
+    <link rel="shortcut icon" href="app-assets/images/logo/logo-light.png">
     <link
         href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
         rel='stylesheet' type='text/css'>
     <!-- FontAwesome JS -->
-    <script defer src="{% static 'assets/documentation/fontawesome/js/all.js' %}"></script>
+    <script defer src="assets/documentation/fontawesome/js/all.js"></script>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="{% static 'assets/documentation/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="assets/documentation/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{% static 'assets/documentation/plugins/elegant_font/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/documentation/plugins/prism/prism.css' %}">
+    <link rel="stylesheet" href="assets/documentation/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="assets/documentation/plugins/prism/prism.css">
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="{% static 'assets/documentation/css/styles.css' %}">
+    <link id="theme-style" rel="stylesheet" href="assets/documentation/css/styles.css">
 
 
 
@@ -42,8 +40,7 @@
                     <h1 class="logo">
                         <a href="index.html">
 
-                            <h2 class="branding text-bold"><img
-                                    src="{% static 'app-assets/images/logo/logo-light.png' %}">&nbsp App
+                            <h2 class="branding text-bold"><img src="app-assets/images/logo/logo-light.png">&nbsp App
                                 Super</h2>
                         </a>
                     </h1>
@@ -216,8 +213,8 @@
                                         o consumo dos endpoints seja bem sucedido. A Figura 1 mostra de forma
                                         representativa o processo de autenticação.</p>
                                     <div style="width: 80%; margin: auto;">
-                                        <p><img src="{% static 'assets/documentation/images/apikey.svg' %}"
-                                                alt="Figura1" title="Autenticação com a API"></p>
+                                        <p><img src="assets/documentation/images/apikey.svg" alt="Figura1"
+                                                title="Autenticação com a API"></p>
                                     </div>
                                     <p><strong><em>Figura 1: Ilustração da autenticação com a API, a API Key deve ser
                                                 enviada no header de todos os requests.</em></strong></p>
@@ -4369,20 +4366,18 @@
 
 
             <!-- Main Javascript -->
-            <script type="text/javascript" src="{% static 'assets/documentation/assets/plugins/jquery-3.4.1.min.js' %}">
+            <script type="text/javascript" src="assets/documentation/assets/plugins/jquery-3.4.1.min.js">
+            </script>
+            <script type="text/javascript" src="assets/documentation/assets/plugins/bootstrap/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript" src="assets/documentation/assets/plugins/prism/prism.js">
             </script>
             <script type="text/javascript"
-                src="{% static 'assets/documentation/assets/plugins/bootstrap/js/bootstrap.min.js' %}">
+                src="assets/documentation/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
             </script>
-            <script type="text/javascript" src="{% static 'assets/documentation/assets/plugins/prism/prism.js' %}">
+            <script type="text/javascript" src="assets/documentation/assets/plugins/stickyfill/dist/stickyfill.min.js">
             </script>
-            <script type="text/javascript"
-                src="{% static 'assets/documentation/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}">
-            </script>
-            <script type="text/javascript"
-                src="{% static 'assets/documentation/assets/plugins/stickyfill/dist/stickyfill.min.js' %}">
-            </script>
-            <script type="text/javascript" src="{% static 'assets/documentation/assets/js/main.js' %}"></script>
+            <script type="text/javascript" src="assets/documentation/assets/js/main.js"></script>
         </div>
     </div>
 
