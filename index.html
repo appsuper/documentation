@@ -3969,6 +3969,197 @@
 
 
 
+                            <h3 class="mume-header" id="integra%C3%A7%C3%A3o-com-a-super-promo%C3%A7%C3%A3o">
+                                Integração com a Super Promoção</h3>
+
+                            <p>Disponibilizamos acesso à Super Promoção or meio dos dois endpoint
+                                listados abaixo.</p>
+                            <details>
+                                <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
+                                            &nbsp</strong></mark> &nbsp Retorna a lista de coupon (produtos
+                                    disponíveis para resgate) de um usuário específico.
+                                    <strong>
+                                        <pre data-role="codeBlock" data-info="bash" class="language-bash">/v2/supersale/check-coupon/
+                            </pre>
+                                    </strong>
+                                </summary>
+                                <div style="border:1px solid #c3c3c3; padding:10px;">
+                                    <ul>
+                                        <li>
+                                            <h5>Parâmetros de Entrada</h5>
+                                            <p>Este endpoint fornece a lista de produtos que um cpf tem para resgatar em
+                                                um estabelecimento participante da Super Promoção. Deve-se
+                                                enviar o objeto da Tabela 21 no corpo da requisição.</p>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Objeto</th>
+                                                        <th style="text-align:left">Parâmetro</th>
+                                                        <th style="text-align:left">Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left"><strong>CouponCheck</strong></td>
+                                                        <td style="text-align:left">-</td>
+                                                        <td style="text-align:left">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string</td>
+                                                        <td style="text-align:left"><strong>cpf</strong></td>
+                                                        <td style="text-align:left">CPF do usuário para checagem
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><strong><em>Tabela 22</em></strong></p>
+                                        </li>
+                                        <li>
+                                            <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                            <p>A Tabela 23 mostra a referência aos parâmetros inclusos na
+                                                resposta desse endpoint.</p>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Objeto</th>
+                                                        <th style="text-align:left">Parâmetro</th>
+                                                        <th style="text-align:left">Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left"><strong>Product</strong></td>
+                                                        <td style="text-align:left">-</td>
+                                                        <td style="text-align:left">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string<br></td>
+                                                        <td style="text-align:left"><strong>cpf</strong></td>
+                                                        <td style="text-align:left">CPF do usuário</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string<br></td>
+                                                        <td style="text-align:left"><strong>product_code</strong></td>
+                                                        <td style="text-align:left">Código do Produto</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string<br><em>(decimal)</em></td>
+                                                        <td style="text-align:left"><strong>max_amount</strong></td>
+                                                        <td style="text-align:left">Quantidade máxima</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><strong><em>Tabela 23</em></strong></p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </details>
+                            <details>
+                                <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
+                                            &nbsp</strong></mark> &nbsp Marca um coupon como utilizado.
+                                    <strong>
+                                        <pre data-role="codeBlock" data-info="bash" class="language-bash">/v2/supersale/check-coupon/
+                            </pre>
+                                    </strong>
+                                </summary>
+                                <div style="border:1px solid #c3c3c3; padding:10px;">
+                                    <ul>
+                                        <li>
+                                            <h5>Parâmetros de Entrada</h5>
+                                            <p>Por meio desse endpoint é possível marcar como usados os
+                                                coupons de um determinado CPF. É necessário o envio do objeto
+                                                descrito na Tabela 24 no corpo da requiisição.</p>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Objeto</th>
+                                                        <th style="text-align:left">Parâmetro</th>
+                                                        <th style="text-align:left">Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left"><strong>CouponConfirmUse</strong>
+                                                        </td>
+                                                        <td style="text-align:left">-</td>
+                                                        <td style="text-align:left">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string</td>
+                                                        <td style="text-align:left"><strong>cpf</strong></td>
+                                                        <td style="text-align:left">CPF do usuário para checagem
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left"><strong>CouponProduct</strong></td>
+                                                        <td style="text-align:left"><strong>products</strong></td>
+                                                        <td style="text-align:left">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string</td>
+                                                        <td style="text-align:left"><strong>product_code</strong></td>
+                                                        <td style="text-align:left">Código do produto</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string<br> <em>(decimal)</em></td>
+                                                        <td style="text-align:left"><strong>amount</strong></td>
+                                                        <td style="text-align:left">Qauntidade do produto</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><strong><em>Tabela 24</em></strong></p>
+                                        </li>
+                                        <li>
+                                            <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                            <p>A Tabela 25 mostra a referência aos parâmetros inclusos na
+                                                resposta desse endpoint.</p>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Objeto</th>
+                                                        <th style="text-align:left">Parâmetro</th>
+                                                        <th style="text-align:left">Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left"><strong>CouponConfirmUse</strong>
+                                                        </td>
+                                                        <td style="text-align:left">-</td>
+                                                        <td style="text-align:left">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string</td>
+                                                        <td style="text-align:left"><strong>cpf</strong></td>
+                                                        <td style="text-align:left">CPF do usuário para checagem
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left"><strong>CouponProduct</strong></td>
+                                                        <td style="text-align:left"><strong>products</strong></td>
+                                                        <td style="text-align:left">-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string</td>
+                                                        <td style="text-align:left"><strong>product_code</strong></td>
+                                                        <td style="text-align:left">Código do produto</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">string<br> <em>(decimal)</em></td>
+                                                        <td style="text-align:left"><strong>amount</strong></td>
+                                                        <td style="text-align:left">Qauntidade do produto</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><strong><em>Tabela 25</em></strong></p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </details>
                             <section id="importacao-produtos" class="doc-section">
                                 <h2 class="section-title">Importação de Produtos</h2>
                                 <div class="section-block">
