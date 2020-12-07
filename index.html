@@ -3987,648 +3987,650 @@
                                             </div>
                                         </strong>
                                     </summary>
-                                    <div class="endpoint-detail-bordered"></div>
-                                    <ul>
-                                        <li>
-                                            <h5>Parâmetros de Entrada</h5>
-                                            <p>Este endpoint fornece a lista de produtos que um cpf tem para
-                                                resgatar em
-                                                um estabelecimento participante da Super Promoção. Deve-se
-                                                enviar o objeto da Tabela 21 no corpo da requisição.</p>
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered">
-                                                    <tr>
-                                                        <th style="text-align:left">Objeto</th>
-                                                        <th style="text-align:left">Parâmetro</th>
-                                                        <th style="text-align:left">Descrição</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="text-align:left"><strong>CouponCheck</strong>
-                                                            </td>
-                                                            <td style="text-align:left">-</td>
-                                                            <td style="text-align:left">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="text-align:left">string</td>
-                                                            <td style="text-align:left"><strong>cpf</strong></td>
-                                                            <td style="text-align:left">CPF do usuário para checagem
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <p><strong><em>Tabela 22</em></strong></p>
-                                        </li>
-                                        <li>
-                                            <h5>Resposta ( status_code = HTTP_200_OK )</h5>
-                                            <p>A Tabela 23 mostra a referência aos parâmetros inclusos na
-                                                resposta desse endpoint.</p>
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered">
-                                                    <thead>
+                                    <div class="endpoint-detail-bordered">
+                                        <ul>
+                                            <li>
+                                                <h5>Parâmetros de Entrada</h5>
+                                                <p>Este endpoint fornece a lista de produtos que um cpf tem para
+                                                    resgatar em
+                                                    um estabelecimento participante da Super Promoção. Deve-se
+                                                    enviar o objeto da Tabela 21 no corpo da requisição.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
                                                         <tr>
                                                             <th style="text-align:left">Objeto</th>
                                                             <th style="text-align:left">Parâmetro</th>
                                                             <th style="text-align:left">Descrição</th>
                                                         </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="text-align:left"><strong>Product</strong>
-                                                            </td>
-                                                            <td style="text-align:left">-</td>
-                                                            <td style="text-align:left">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="text-align:left">string<br></td>
-                                                            <td style="text-align:left"><strong>cpf</strong></td>
-                                                            <td style="text-align:left">CPF do usuário</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="text-align:left">string<br></td>
-                                                            <td style="text-align:left">
-                                                                <strong>product_code</strong>
-                                                            </td>
-                                                            <td style="text-align:left">Código do Produto</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="text-align:left">string<br><em>(decimal)</em>
-                                                            </td>
-                                                            <td style="text-align:left"><strong>max_amount</strong>
-                                                            </td>
-                                                            <td style="text-align:left">Quantidade máxima</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left"><strong>CouponCheck</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário para checagem
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 22</em></strong></p>
+                                            </li>
+                                            <li>
+                                                <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                <p>A Tabela 23 mostra a referência aos parâmetros inclusos na
+                                                    resposta desse endpoint.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="text-align:left">Objeto</th>
+                                                                <th style="text-align:left">Parâmetro</th>
+                                                                <th style="text-align:left">Descrição</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left"><strong>Product</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br></td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br></td>
+                                                                <td style="text-align:left">
+                                                                    <strong>product_code</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Código do Produto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br><em>(decimal)</em>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>max_amount</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Quantidade máxima</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 23</em></strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </details>
+                                <details>
+                                    <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
+                                                &nbsp</strong></mark> &nbsp Marca um coupon como utilizado.
+                                        <strong>
+                                            <div class="code-block ">
+                                                <p> <code>/v2/supersale/check-coupon/</code></p>
                                             </div>
-                                            <p><strong><em>Tabela 23</em></strong></p>
+                                        </strong>
+                                    </summary>
+                                    <div class="endpoint-detail-bordered">
+                                        <ul>
+                                            <li>
+                                                <h5>Parâmetros de Entrada</h5>
+                                                <p>Por meio desse endpoint é possível marcar como usados os
+                                                    coupons de um determinado CPF. É necessário o envio do objeto
+                                                    descrito na Tabela 24 no corpo da requiisição.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="text-align:left">Objeto</th>
+                                                                <th style="text-align:left">Parâmetro</th>
+                                                                <th style="text-align:left">Descrição</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponConfirmUse</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário para checagem
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponProduct</strong>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>products</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left">
+                                                                    <strong>product_code</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Código do produto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br>
+                                                                    <em>(decimal)</em>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>amount</strong></td>
+                                                                <td style="text-align:left">Qauntidade do produto</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 24</em></strong></p>
+                                            </li>
+                                            <li>
+                                                <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                <p>A Tabela 25 mostra a referência aos parâmetros inclusos na
+                                                    resposta desse endpoint.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="text-align:left">Objeto</th>
+                                                                <th style="text-align:left">Parâmetro</th>
+                                                                <th style="text-align:left">Descrição</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponConfirmUse</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário para checagem
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponProduct</strong>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>products</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left">
+                                                                    <strong>product_code</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Código do produto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br>
+                                                                    <em>(decimal)</em>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>amount</strong></td>
+                                                                <td style="text-align:left">Qauntidade do produto</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 25</em></strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </details>
+                                <section id="importacao-produtos" class="doc-section">
+                                    <h2 class="section-title">Importação de Produtos</h2>
+                                    <div class="section-block">
+
+                                        <p>Para realizar a atualização de preços e características dos produtos no nosso
+                                            banco,
+                                            o parceiro deve enviar periodicamente lotes de importação. Os lotes podem
+                                            ser
+                                            enviados a
+                                            qualquer momento pelo parceiro, porém a sincronização dos lotes é feita em
+                                            intervalos de 30 minutos, portanto o parceiro deve ficar ciente que haverá
+                                            um
+                                            delay de
+                                            no máximo 30 minutos até que as informações dos produtos enviados no lote
+                                            estejam
+                                            attualizadas no App. </p>
+
+                                        <div class="callout-block callout-success">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-thumbs-up"></i>
+                                            </div>
+                                            <!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Importante</h4>
+                                                <p>Recomenda-se que os lotes sejam sempre compostos de até <strong>1000
+                                                        produtos.</strong>
+                                                </p>
+                                            </div>
+                                            <!--//content-->
+                                        </div>
+
+                                    </div>
+                                </section>
+
+
+
+                                <section id="fluxo-pagamento" class="doc-section">
+                                    <h2 class="section-title">Fluxo de Pagamentos</h2>
+                                    <div class="section-block">
+
+                                        <p>Ao finalizar o pedido com o cartão de crédito, nossa plataforma
+                                            não captura o valor da compra do cliente imediatamente. Como durante a
+                                            separação
+                                            dos produtos podem haver faltas de mercadoria a captura só é feita após o
+                                            pedido
+                                            passar pelo PDV. Por isso, nos objetos Payment em nossos endpoint você verá
+                                            o
+                                            valor <strong><em>transaction_amount</em></strong> (que corresponde ao valor
+                                            inicial do pedido) e o valor <strong><em>amount</em></strong> (referente ao
+                                            valor capturado do pedido, após descontar todos os produtos faltantes).</p>
+                                    </div>
+                                </section>
+
+                                <section id="diferenca-product" class="doc-section">
+                                    <h2 class="section-title">Diferença entre Product e OrderItem</h2>
+                                    <div class="section-block">
+
+                                        <p>Dentro da nossa plataforma um objeto <strong><em>Product</em></strong> é um
+                                            produto de fato, que pode ser um produto do banco de dados do App Super ou
+                                            um
+                                            produto que já foi designado para a tabela de um parceiro específico. Quando
+                                            um
+                                            cliente monta seu carrinho, e escolher um <strong><em>Product</em></strong>
+                                            em
+                                            um determinado estabelecimento, cria-se um novo objeto referente ao produto
+                                            dentro de um pedido, o objeto <strong><em>OrderItem</em></strong>.</p>
+                                    </div>
+                                </section>
+
+
+
+                                <section id="tabelas-referencia" class="doc-section">
+                                    <h2 class="section-title">Tabelas de Referência</h2>
+                                    <div class="section-block">
+
+                                        <ul>
+                                            <li>
+                                                <h5 id="status-pedidos">Status de Pedidos</h5>
+                                            </li>
+                                        </ul>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Valor</th>
+                                                        <th style="text-align:left">Status (Hard Coded)</th>
+                                                        <th style="text-align:left">Descrição (status_display)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left">0</td>
+                                                        <td style="text-align:left"><strong>STATUS_CART</strong></td>
+                                                        <td style="text-align:left">Carrinho</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">1</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_PAYMENT_CONFIRMED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pagamento autorizado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">2</td>
+                                                        <td style="text-align:left"><strong>STATUS_PREPARATION</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Em separação</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">3</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_WAITING_DELIVERY</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pronto para entrega</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">4</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_WAITING_PICKUP</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pronto para retirada</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">5</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_OUT_FOR_DELIVERY</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Saiu para entrega</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">6</td>
+                                                        <td style="text-align:left"><strong>STATUS_DELIVERED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Entregue</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">7</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_CANCELED_BY_CUSTOMER</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Cancelado pelo cliente</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">8</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_CANCELED_BY_MERCHANT</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Cancelado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">9</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_NOT_DELIVERED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Não Entregue</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">10</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_DELIVERY_ACCEPTED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pedido de entrega aceito pelo
+                                                            entregador
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">11</td>
+                                                        <td style="text-align:left"><strong>STATUS_COLLECTED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Coletado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">12</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_DELIVERYMAN_RECEIVED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pedido recebido pelo entregador</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">13</td>
+                                                        <td style="text-align:left">
+                                                            <strong>STATUS_PAYMENT_ANALISIS</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pagamento em análise</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">14</td>
+                                                        <td style="text-align:left"><strong>STATUS_PAYMENT_DONE</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pagamento Finalizado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">15</td>
+                                                        <td style="text-align:left"><strong>STATUS_ACCEPTED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pedido aceito</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p><strong><em>Tabela 22</em></strong></p>
+
+                                        <br>
+
+
+                                        <ul>
+                                            <li>
+                                                <h5 id="status-pagamentos">Status de Pagamentos</h5>
+                                            </li>
+                                        </ul>
+                                        <p>No fluxo de pagametos do App Super, quando o cliente finaliza o pedido,
+                                            fazemos
+                                            uma
+                                            pré-autorização do valor da compra. O valor só é realmente capturado quando
+                                            a
+                                            compra foi coletada e todas as ocorrências foram registradas. Assim, ao
+                                            passar
+                                            pelo
+                                            ponto de venda
+                                            (PDV) o valor pré-autorizado é ajustado, levando em conta os cortes, e então
+                                            este valor
+                                            ajustado é capturado. A Tabela 23 mostra os status de pegamentos que nossa
+                                            API
+                                            contempla.</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Valor</th>
+                                                        <th style="text-align:left">Status (Hard Coded)</th>
+                                                        <th style="text-align:left">Descrição (status_display)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left">0</td>
+                                                        <td style="text-align:left"><strong>TRANSACTION_SUCCESS</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pagamento pré-autorizado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">1</td>
+                                                        <td style="text-align:left"><strong>TRANSACTION_ERROR</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Erro ao processar pagamento</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">2</td>
+                                                        <td style="text-align:left">
+                                                            <strong>TRANSACTION_CAPTURE_SUCCESS</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pagamento capturado com sucesso</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">3</td>
+                                                        <td style="text-align:left">
+                                                            <strong>TRANSACTION_CAPTURE_ERROR</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Erro ao executar captura</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">4</td>
+                                                        <td style="text-align:left">
+                                                            <strong>TRANSACTION_CANCELED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Pagamento cancelado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">5</td>
+                                                        <td style="text-align:left">
+                                                            <strong>TRANSACTION_STATUS_NOT_IDENTIFIED</strong>
+                                                        </td>
+                                                        <td style="text-align:left">Status não identificado</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p><strong><em>Tabela 23</em></strong></p>
+
+
+                                        <ul>
+                                            <li>
+                                                <h5 id="status-http">Status HTTP</h5>
+                                            </li>
+                                        </ul>
+                                        <p>A Tabela 24 mostra todos os possíveis status retornados por nossos endpoints.
+                                        </p>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Código</th>
+                                                        <th style="text-align:left">Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left">200</td>
+                                                        <td style="text-align:left"><strong>OK</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">201</td>
+                                                        <td style="text-align:left"><strong>CREATED</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">204</td>
+                                                        <td style="text-align:left"><strong>NO_CONTENT</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">404</td>
+                                                        <td style="text-align:left"><strong>BAD_REQUEST</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p><strong><em>Tabela 24</em></strong></p>
+
+
+                                        <ul>
+                                            <li>
+                                                <h5 id="tipos-entregas">Tipos de Entrega</h5>
+                                            </li>
+                                        </ul>
+                                        <p>A Tabela 25 mostra os tipos de entrega que disponibilizamos pela nossa
+                                            plataforma.</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="text-align:left">Tipo de Entrega</th>
+                                                        <th style="text-align:left">Hard Coded</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:left">Buscar na Loja</td>
+                                                        <td style="text-align:left"><strong>pickup</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:left">Entrega a domicílio</td>
+                                                        <td style="text-align:left"><strong>delivery</strong></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p><strong><em>Tabela 25</em></strong></p>
+
+
+                                    </div>
+
+
+
+                                </section>
+
+
+
+                                <hr class="footnotes-sep">
+                                <section class="footnotes">
+                                    <h4>Definições extras</h4>
+                                    <ol class="footnotes-list">
+                                        <li id="fn1" class="footnote-item">
+                                            <p><strong>API Keys</strong> são credenciais de acesso
+                                                fornecidas de maneira a autorizar o
+                                                uso de funcionalidades específicas de uma API <a href="#fnref1"
+                                                    class="footnote-backref">&#x21A9;&#xFE0E;</a></p>
                                         </li>
-                                    </ul>
+
+                                        <li id="fn2" class="footnote-item">
+                                            <p>O <strong>Processo de conferência obrigatório</strong> ocorre
+                                                em estabelecimentos
+                                                onde o App Super não é integrado com os PDVs portanto as
+                                                informações dos
+                                                pedidos não vão diretamente enviadas para o PDV. Nesses
+                                                casos o coletor deve
+                                                realizar a conferência de valores, produtos e ocorrências
+                                                (falta de produtos) nos
+                                                pedidos. <a href="#fnref2" class="footnote-backref">&#x21A9;&#xFE0E;</a>
+                                                <a href="#fnref2:1" class="footnote-backref">&#x21A9;&#xFE0E;</a>
+                                            </p>
+                                        </li>
+
+                                        <li id="fn3" class="footnote-item">
+                                            <p>O <strong>Código NSU</strong> - <a
+                                                    href="https://www.conferecartoes.com.br/blog/o-que-e-nsu"> Saiba
+                                                    mais</a> <a href="#fnref3"
+                                                    class="footnote-backref">&#x21A9;&#xFE0E;</a>
+                                                <a href="#fnref3:1" class="footnote-backref">&#x21A9;&#xFE0E;</a>
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </section>
+
+
+
+
+
+
+                                <!--//doc-sidebar-->
                         </div>
-
-
-                        </details>
-                        <details>
-                            <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
-                                        &nbsp</strong></mark> &nbsp Marca um coupon como utilizado.
-                                <strong>
-                                    <div class="code-block ">
-                                        <p> <code>/v2/supersale/check-coupon/</code></p>
-                                    </div>
-                                </strong>
-                            </summary>
-                            <div class="endpoint-detail-bordered"></div>
-                            <ul>
-                                <li>
-                                    <h5>Parâmetros de Entrada</h5>
-                                    <p>Por meio desse endpoint é possível marcar como usados os
-                                        coupons de um determinado CPF. É necessário o envio do objeto
-                                        descrito na Tabela 24 no corpo da requiisição.</p>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th style="text-align:left">Objeto</th>
-                                                    <th style="text-align:left">Parâmetro</th>
-                                                    <th style="text-align:left">Descrição</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="text-align:left">
-                                                        <strong>CouponConfirmUse</strong>
-                                                    </td>
-                                                    <td style="text-align:left">-</td>
-                                                    <td style="text-align:left">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">string</td>
-                                                    <td style="text-align:left"><strong>cpf</strong></td>
-                                                    <td style="text-align:left">CPF do usuário para checagem
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">
-                                                        <strong>CouponProduct</strong>
-                                                    </td>
-                                                    <td style="text-align:left"><strong>products</strong>
-                                                    </td>
-                                                    <td style="text-align:left">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">string</td>
-                                                    <td style="text-align:left">
-                                                        <strong>product_code</strong>
-                                                    </td>
-                                                    <td style="text-align:left">Código do produto</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">string<br>
-                                                        <em>(decimal)</em>
-                                                    </td>
-                                                    <td style="text-align:left"><strong>amount</strong></td>
-                                                    <td style="text-align:left">Qauntidade do produto</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <p><strong><em>Tabela 24</em></strong></p>
-                                </li>
-                                <li>
-                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
-                                    <p>A Tabela 25 mostra a referência aos parâmetros inclusos na
-                                        resposta desse endpoint.</p>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th style="text-align:left">Objeto</th>
-                                                    <th style="text-align:left">Parâmetro</th>
-                                                    <th style="text-align:left">Descrição</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="text-align:left">
-                                                        <strong>CouponConfirmUse</strong>
-                                                    </td>
-                                                    <td style="text-align:left">-</td>
-                                                    <td style="text-align:left">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">string</td>
-                                                    <td style="text-align:left"><strong>cpf</strong></td>
-                                                    <td style="text-align:left">CPF do usuário para checagem
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">
-                                                        <strong>CouponProduct</strong>
-                                                    </td>
-                                                    <td style="text-align:left"><strong>products</strong>
-                                                    </td>
-                                                    <td style="text-align:left">-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">string</td>
-                                                    <td style="text-align:left">
-                                                        <strong>product_code</strong>
-                                                    </td>
-                                                    <td style="text-align:left">Código do produto</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:left">string<br>
-                                                        <em>(decimal)</em>
-                                                    </td>
-                                                    <td style="text-align:left"><strong>amount</strong></td>
-                                                    <td style="text-align:left">Qauntidade do produto</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <p><strong><em>Tabela 25</em></strong></p>
-                                </li>
-                            </ul>
+                        <!--//doc-body-->
                     </div>
-
-
-                    </details>
-                    <section id="importacao-produtos" class="doc-section">
-                        <h2 class="section-title">Importação de Produtos</h2>
-                        <div class="section-block">
-
-                            <p>Para realizar a atualização de preços e características dos produtos no nosso
-                                banco,
-                                o parceiro deve enviar periodicamente lotes de importação. Os lotes podem
-                                ser
-                                enviados a
-                                qualquer momento pelo parceiro, porém a sincronização dos lotes é feita em
-                                intervalos de 30 minutos, portanto o parceiro deve ficar ciente que haverá
-                                um
-                                delay de
-                                no máximo 30 minutos até que as informações dos produtos enviados no lote
-                                estejam
-                                attualizadas no App. </p>
-
-                            <div class="callout-block callout-success">
-                                <div class="icon-holder">
-                                    <i class="fas fa-thumbs-up"></i>
-                                </div>
-                                <!--//icon-holder-->
-                                <div class="content">
-                                    <h4 class="callout-title">Importante</h4>
-                                    <p>Recomenda-se que os lotes sejam sempre compostos de até <strong>1000
-                                            produtos.</strong>
-                                    </p>
-                                </div>
-                                <!--//content-->
-                            </div>
-
-                        </div>
-                    </section>
-
-
-
-                    <section id="fluxo-pagamento" class="doc-section">
-                        <h2 class="section-title">Fluxo de Pagamentos</h2>
-                        <div class="section-block">
-
-                            <p>Ao finalizar o pedido com o cartão de crédito, nossa plataforma
-                                não captura o valor da compra do cliente imediatamente. Como durante a
-                                separação
-                                dos produtos podem haver faltas de mercadoria a captura só é feita após o
-                                pedido
-                                passar pelo PDV. Por isso, nos objetos Payment em nossos endpoint você verá
-                                o
-                                valor <strong><em>transaction_amount</em></strong> (que corresponde ao valor
-                                inicial do pedido) e o valor <strong><em>amount</em></strong> (referente ao
-                                valor capturado do pedido, após descontar todos os produtos faltantes).</p>
-                        </div>
-                    </section>
-
-                    <section id="diferenca-product" class="doc-section">
-                        <h2 class="section-title">Diferença entre Product e OrderItem</h2>
-                        <div class="section-block">
-
-                            <p>Dentro da nossa plataforma um objeto <strong><em>Product</em></strong> é um
-                                produto de fato, que pode ser um produto do banco de dados do App Super ou
-                                um
-                                produto que já foi designado para a tabela de um parceiro específico. Quando
-                                um
-                                cliente monta seu carrinho, e escolher um <strong><em>Product</em></strong>
-                                em
-                                um determinado estabelecimento, cria-se um novo objeto referente ao produto
-                                dentro de um pedido, o objeto <strong><em>OrderItem</em></strong>.</p>
-                        </div>
-                    </section>
-
-
-
-                    <section id="tabelas-referencia" class="doc-section">
-                        <h2 class="section-title">Tabelas de Referência</h2>
-                        <div class="section-block">
-
-                            <ul>
-                                <li>
-                                    <h5 id="status-pedidos">Status de Pedidos</h5>
-                                </li>
-                            </ul>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align:left">Valor</th>
-                                            <th style="text-align:left">Status (Hard Coded)</th>
-                                            <th style="text-align:left">Descrição (status_display)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align:left">0</td>
-                                            <td style="text-align:left"><strong>STATUS_CART</strong></td>
-                                            <td style="text-align:left">Carrinho</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">1</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_PAYMENT_CONFIRMED</strong>
-                                            </td>
-                                            <td style="text-align:left">Pagamento autorizado</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">2</td>
-                                            <td style="text-align:left"><strong>STATUS_PREPARATION</strong>
-                                            </td>
-                                            <td style="text-align:left">Em separação</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">3</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_WAITING_DELIVERY</strong>
-                                            </td>
-                                            <td style="text-align:left">Pronto para entrega</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">4</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_WAITING_PICKUP</strong>
-                                            </td>
-                                            <td style="text-align:left">Pronto para retirada</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">5</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_OUT_FOR_DELIVERY</strong>
-                                            </td>
-                                            <td style="text-align:left">Saiu para entrega</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">6</td>
-                                            <td style="text-align:left"><strong>STATUS_DELIVERED</strong>
-                                            </td>
-                                            <td style="text-align:left">Entregue</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">7</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_CANCELED_BY_CUSTOMER</strong>
-                                            </td>
-                                            <td style="text-align:left">Cancelado pelo cliente</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">8</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_CANCELED_BY_MERCHANT</strong>
-                                            </td>
-                                            <td style="text-align:left">Cancelado</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">9</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_NOT_DELIVERED</strong>
-                                            </td>
-                                            <td style="text-align:left">Não Entregue</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">10</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_DELIVERY_ACCEPTED</strong>
-                                            </td>
-                                            <td style="text-align:left">Pedido de entrega aceito pelo
-                                                entregador
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">11</td>
-                                            <td style="text-align:left"><strong>STATUS_COLLECTED</strong>
-                                            </td>
-                                            <td style="text-align:left">Coletado</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">12</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_DELIVERYMAN_RECEIVED</strong>
-                                            </td>
-                                            <td style="text-align:left">Pedido recebido pelo entregador</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">13</td>
-                                            <td style="text-align:left">
-                                                <strong>STATUS_PAYMENT_ANALISIS</strong>
-                                            </td>
-                                            <td style="text-align:left">Pagamento em análise</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">14</td>
-                                            <td style="text-align:left"><strong>STATUS_PAYMENT_DONE</strong>
-                                            </td>
-                                            <td style="text-align:left">Pagamento Finalizado</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">15</td>
-                                            <td style="text-align:left"><strong>STATUS_ACCEPTED</strong>
-                                            </td>
-                                            <td style="text-align:left">Pedido aceito</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p><strong><em>Tabela 22</em></strong></p>
-
-                            <br>
-
-
-                            <ul>
-                                <li>
-                                    <h5 id="status-pagamentos">Status de Pagamentos</h5>
-                                </li>
-                            </ul>
-                            <p>No fluxo de pagametos do App Super, quando o cliente finaliza o pedido,
-                                fazemos
-                                uma
-                                pré-autorização do valor da compra. O valor só é realmente capturado quando
-                                a
-                                compra foi coletada e todas as ocorrências foram registradas. Assim, ao
-                                passar
-                                pelo
-                                ponto de venda
-                                (PDV) o valor pré-autorizado é ajustado, levando em conta os cortes, e então
-                                este valor
-                                ajustado é capturado. A Tabela 23 mostra os status de pegamentos que nossa
-                                API
-                                contempla.</p>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align:left">Valor</th>
-                                            <th style="text-align:left">Status (Hard Coded)</th>
-                                            <th style="text-align:left">Descrição (status_display)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align:left">0</td>
-                                            <td style="text-align:left"><strong>TRANSACTION_SUCCESS</strong>
-                                            </td>
-                                            <td style="text-align:left">Pagamento pré-autorizado</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">1</td>
-                                            <td style="text-align:left"><strong>TRANSACTION_ERROR</strong>
-                                            </td>
-                                            <td style="text-align:left">Erro ao processar pagamento</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">2</td>
-                                            <td style="text-align:left">
-                                                <strong>TRANSACTION_CAPTURE_SUCCESS</strong>
-                                            </td>
-                                            <td style="text-align:left">Pagamento capturado com sucesso</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">3</td>
-                                            <td style="text-align:left">
-                                                <strong>TRANSACTION_CAPTURE_ERROR</strong>
-                                            </td>
-                                            <td style="text-align:left">Erro ao executar captura</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">4</td>
-                                            <td style="text-align:left">
-                                                <strong>TRANSACTION_CANCELED</strong>
-                                            </td>
-                                            <td style="text-align:left">Pagamento cancelado</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">5</td>
-                                            <td style="text-align:left">
-                                                <strong>TRANSACTION_STATUS_NOT_IDENTIFIED</strong>
-                                            </td>
-                                            <td style="text-align:left">Status não identificado</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p><strong><em>Tabela 23</em></strong></p>
-
-
-                            <ul>
-                                <li>
-                                    <h5 id="status-http">Status HTTP</h5>
-                                </li>
-                            </ul>
-                            <p>A Tabela 24 mostra todos os possíveis status retornados por nossos endpoints.
-                            </p>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align:left">Código</th>
-                                            <th style="text-align:left">Descrição</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align:left">200</td>
-                                            <td style="text-align:left"><strong>OK</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">201</td>
-                                            <td style="text-align:left"><strong>CREATED</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">204</td>
-                                            <td style="text-align:left"><strong>NO_CONTENT</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">404</td>
-                                            <td style="text-align:left"><strong>BAD_REQUEST</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p><strong><em>Tabela 24</em></strong></p>
-
-
-                            <ul>
-                                <li>
-                                    <h5 id="tipos-entregas">Tipos de Entrega</h5>
-                                </li>
-                            </ul>
-                            <p>A Tabela 25 mostra os tipos de entrega que disponibilizamos pela nossa
-                                plataforma.</p>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align:left">Tipo de Entrega</th>
-                                            <th style="text-align:left">Hard Coded</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align:left">Buscar na Loja</td>
-                                            <td style="text-align:left"><strong>pickup</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">Entrega a domicílio</td>
-                                            <td style="text-align:left"><strong>delivery</strong></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p><strong><em>Tabela 25</em></strong></p>
-
-
-                        </div>
-
-
-
-                    </section>
-
-
-
-                    <hr class="footnotes-sep">
-                    <section class="footnotes">
-                        <h4>Definições extras</h4>
-                        <ol class="footnotes-list">
-                            <li id="fn1" class="footnote-item">
-                                <p><strong>API Keys</strong> são credenciais de acesso
-                                    fornecidas de maneira a autorizar o
-                                    uso de funcionalidades específicas de uma API <a href="#fnref1"
-                                        class="footnote-backref">&#x21A9;&#xFE0E;</a></p>
-                            </li>
-
-                            <li id="fn2" class="footnote-item">
-                                <p>O <strong>Processo de conferência obrigatório</strong> ocorre
-                                    em estabelecimentos
-                                    onde o App Super não é integrado com os PDVs portanto as
-                                    informações dos
-                                    pedidos não vão diretamente enviadas para o PDV. Nesses
-                                    casos o coletor deve
-                                    realizar a conferência de valores, produtos e ocorrências
-                                    (falta de produtos) nos
-                                    pedidos. <a href="#fnref2" class="footnote-backref">&#x21A9;&#xFE0E;</a>
-                                    <a href="#fnref2:1" class="footnote-backref">&#x21A9;&#xFE0E;</a>
-                                </p>
-                            </li>
-
-                            <li id="fn3" class="footnote-item">
-                                <p>O <strong>Código NSU</strong> - <a
-                                        href="https://www.conferecartoes.com.br/blog/o-que-e-nsu"> Saiba
-                                        mais</a> <a href="#fnref3" class="footnote-backref">&#x21A9;&#xFE0E;</a>
-                                    <a href="#fnref3:1" class="footnote-backref">&#x21A9;&#xFE0E;</a>
-                                </p>
-                            </li>
-                        </ol>
-                    </section>
-
-
-
-
-
-
-                    <!--//doc-sidebar-->
+                    <!--//container-->
                 </div>
-                <!--//doc-body-->
+                <!--//doc-wrapper-->
+
+
             </div>
-            <!--//container-->
+
+            <!--//page-wrapper-->
+
+            <footer id="footer" class="footer text-center">
+                <div class="container">
+                    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                    <small class="copyright">© 2020 Super. Todos os direitos reservados.</small>
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+
+            <!-- Main Javascript -->
+            <script type="text/javascript" src="assets/documentation/assets/plugins/jquery-3.4.1.min.js">
+            </script>
+            <script type="text/javascript" src="assets/documentation/assets/plugins/bootstrap/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript" src="assets/documentation/assets/plugins/prism/prism.js">
+            </script>
+            <script type="text/javascript"
+                src="assets/documentation/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
+            </script>
+            <script type="text/javascript" src="assets/documentation/assets/plugins/stickyfill/dist/stickyfill.min.js">
+            </script>
+            <script type="text/javascript" src="assets/documentation/assets/js/main.js"></script>
         </div>
-        <!--//doc-wrapper-->
-
-
-    </div>
-
-    <!--//page-wrapper-->
-
-    <footer id="footer" class="footer text-center">
-        <div class="container">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">© 2020 Super. Todos os direitos reservados.</small>
-
-        </div>
-        <!--//container-->
-    </footer>
-    <!--//footer-->
-
-
-    <!-- Main Javascript -->
-    <script type="text/javascript" src="assets/documentation/assets/plugins/jquery-3.4.1.min.js">
-    </script>
-    <script type="text/javascript" src="assets/documentation/assets/plugins/bootstrap/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript" src="assets/documentation/assets/plugins/prism/prism.js">
-    </script>
-    <script type="text/javascript" src="assets/documentation/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
-    </script>
-    <script type="text/javascript" src="assets/documentation/assets/plugins/stickyfill/dist/stickyfill.min.js">
-    </script>
-    <script type="text/javascript" src="assets/documentation/assets/js/main.js"></script>
-    </div>
     </div>
 
 
