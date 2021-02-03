@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Documentação Super API</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../app-assets/images/logo/logo-light.png">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="../assets/documentation/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="../assets/documentation/plugins/prism/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/documentation/css/styles.css">
+
+
+
+</head>
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="https://appsuper.github.io/documentation/">
+
+                            <h2 class="branding text-bold"><img src="../app-assets/images/logo/logo-light.png">&nbsp App
+                                Super</h2>
+                        </a>
+                    </h1>
+
+                </div>
+                <!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="https://parceiro.appsuper.com.br/">Parceiro</a></li>
+                    <li class="breadcrumb-item active">Documentação</li>
+                </ol>
+
+                <!-- <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div> -->
+
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container" style="min-height: 800px;">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class='fas fa-paper-plane'></i> Documentação API</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última Atualização: 16 de Outubro, 2020</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+
+
+                    <!--//doc-left-navlist-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link " href="../index.html">Introdução</a>
+                                <a class="nav-link" href="./inner-pages/initial-info.html">Informações Iniciais</a>
+                                <a class="nav-link" href="./inner-pages/authentication.html">Autenticação</a>
+                                <a class="nav-link" href="./inner-pages/environments.html">Ambiente de Desenvolvimento</a>
+                                <a class="nav-link" href="./inner-pages/establishments_api.html">API de Estabelecimentos</a>
+                                <a class="nav-link" href="./inner-pages/orders_api.html">API de Pedidos</a>
+                                <a class="nav-link" href="#">API de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/super_sale.html">Integração com a
+                                    Super Promoção</a>
+                                <a class="nav-link" href="./inner-pages/products.html">Importação de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/payment.html">Fluxo de Pagamentos</a>
+                                <a class="nav-link" href="./inner-pages/product_orderitem.html">Diferença entre Product e
+                                    OrderItem</a>
+                                <a class="nav-link" href="./inner-pages/reference_table.html">Tabelas de Referência </a>
+                                 
+                            </nav>
+                            <!--//doc-menu-->
+
+                        </div>
+                    </div>
+                    <!--//doc-left-navlist-->
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+
+                            <section id="api-produtos" class="doc-section">
+                                <h2 class="section-title">API de Produtos</h2>
+                                <div class="section-block">
+
+                                    <p>Pela API de pedidos você pode acessar detalhes de pedidos, deletar pedidos,
+                                        cancelar
+                                        pedidos e
+                                        finalizar pedidos, abaixo estão listado os endpoints disponíveis.</p>
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna uma lista com os detalhes de produtos de um determinado
+                                            estabelecimento.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product-sku/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer
+                                                        consultar o produto.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 10 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Product</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">Category</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Categoria do produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">JSON</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>description</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">JSON Example:<br>
+                                                                        <code>{&quot;name&quot;:
+                                                                            &quot;Laticinios&quot;, &quot;parent&quot;:
+                                                                            {&quot;name&quot;:
+                                                                            &quot;Frios&quot;}}</code>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 10</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: #f93e3e"><strong>&nbsp DELETE
+                                                    &nbsp</strong></mark> &nbsp
+                                            Deleta um lista de produtos de um estabelecimento específico.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product-sku/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer deletar
+                                                        um produto, além do objeto da Tabela 11 no corpo da requisição.
+                                                    </p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductListSku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [ProductSku]</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>product_list</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de SKU dos
+                                                                        produtos para
+                                                                        deletar</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductSku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>sku</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 11</em></strong></p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_204_NO_CONTENT )</h5>
+                                                    <p>Caso a remoção do produto seja bem sucedida esses endpoint
+                                                        retorna o
+                                                        status
+                                                        <strong>HTTP_204_NO_CONTENT</strong>.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna detalhes de um produto específico pelo código reduzido SKU.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product-sku/{sku}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer
+                                                        consultar o produto, e o código reduzido do mesmo.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 12 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Product</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">Category</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Categoria do produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">JSON</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>description</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">JSON Example:<br>
+                                                                        <code>{&quot;name&quot;:
+                                                                            &quot;Laticinios&quot;, &quot;parent&quot;:
+                                                                            {&quot;name&quot;:
+                                                                            &quot;Frios&quot;}}</code>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 12</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: #f93e3e"><strong>&nbsp DELETE
+                                                    &nbsp</strong></mark> &nbsp
+                                            Deleta um produto de um estabelecimento específico.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product-sku/{sku}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer deletar
+                                                        um produto, o código SKU do produto a deletar, além do objeto da
+                                                        Tabela
+                                                        13 no
+                                                        corpo da requisição.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductListSku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [ProductSku]</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>product_list</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de SKU dos
+                                                                        produtos para
+                                                                        deletar</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductSku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>sku</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 13</em></strong></p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_204_NO_CONTENT )</h5>
+                                                    <p>Caso a remoção do produto seja bem sucedida esses endpoint
+                                                        retorna o
+                                                        status
+                                                        <strong>HTTP_204_NO_CONTENT</strong>.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna uma lista de produtos de um estabelecimento específico.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer
+                                                        consultar a lista de produtos. Além disso, é possível fornecer
+                                                        um
+                                                        parâmetro de paginação como querystring.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 14 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Pagination</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>count</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Número de Itens por
+                                                                        página</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>next</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página seguinte
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>previous</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página anterior
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Product</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">JSON</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>description</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">JSON Example:<br>
+                                                                        <code>{&quot;name&quot;:
+                                                                            &quot;Laticinios&quot;, &quot;parent&quot;:
+                                                                            {&quot;name&quot;:
+                                                                            &quot;Frios&quot;}}</code>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 14</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
+                                                    &nbsp</strong></mark> &nbsp
+                                            Cria um novo lote de importação.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é possível criar lotes de importação para
+                                                        disponibilizar os produtos do seu estabelecimento no App Super,
+                                                        recomenda-se que os
+                                                        <strong>lotes de importação sejam de 1000 em 1000
+                                                            produtos</strong>. O
+                                                        produto
+                                                        deve ter um identificador único especificado através do campo
+                                                        <strong>SKU</strong>. Além disso, deve-se fornecer
+                                                        obrigatoriamente
+                                                        identificador
+                                                        único do estabelecimento (<strong><em>market_id</em></strong>)
+                                                        juntamente com o
+                                                        objeto da Tabela 15. (Veja aqui <a
+                                                            href="https://gist.github.com/GuerreiroLeonardo/01e75844a5b95d476e774a46f55a084a">Exemplo
+                                                            de Requisição</a>)
+                                                    </p>
+
+                                                    <div class="callout-block callout-danger">
+                                                        <div class="icon-holder">
+                                                            <svg class="svg-inline--fa fa-exclamation-triangle fa-w-18"
+                                                                aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                data-icon="exclamation-triangle" role="img"
+                                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                                                data-fa-i2svg="">
+                                                                <path fill="currentColor"
+                                                                    d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">
+                                                                </path>
+                                                            </svg>
+                                                            <!-- <i class="fas fa-exclamation-triangle"></i> Font Awesome fontawesome.com -->
+                                                        </div>
+                                                        <!--//icon-holder-->
+                                                        <div class="content">
+                                                            <h4 class="callout-title">Atenção com EANs de Entrada</h4>
+                                                            <p>Em alguns estabelecimentos existe o conceito de EAN de
+                                                                entrada.
+                                                                Isto é, alguns produtos possuem um EAN principal que se
+                                                                converte em EANs derivados.
+                                                                Isso acontece geralmente com produtos pesados. Por
+                                                                exemplo, o mercado recebe um queijo inteiro e as fatias
+                                                                de queijo tem um EAN derivado.
+                                                                No lote de produto deve ser mandado o EAN derivado e não
+                                                                o de entrada. Caso contrário haverá problema na
+                                                                catalogação dos produtos.</p>
+                                                        </div>
+                                                        <!--//content-->
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductListAdd</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [ProductAdd]</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>product_list</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de SKU dos
+                                                                        produtos para
+                                                                        importar <br>
+                                                                        (tamanho de lote recomendado: <strong>1000
+                                                                            produtos</strong>)</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProducAdd</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left"><strong>bulk</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Booleano que identifica
+                                                                        se um produto é ou não à granel.</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento. Este campo serve para
+                                                                        estabelecimentos que tem o endereçamento dos
+                                                                        produtos nas
+                                                                        gôndolas, caso seu estabelecimento não tenha,
+                                                                        mandar uma string vazia ("").
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>group_sale_required</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Venda em combo
+                                                                        obrigatória</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">object</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>parent_skus</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de skus pais</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 15</em></strong></p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_201_CREATED )</h5>
+                                                    <p>Caso a criação do lote seja bem sucedida esse endpoint retorna o
+                                                        status
+                                                        <strong>HTTP_201_CREATED</strong>, além do objeto da Tabela 16.
+                                                    </p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductListAdd</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [ProductAdd]</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>product_list</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de SKU dos
+                                                                        produtos para
+                                                                        importar <br>
+                                                                        (tamanho de lote recomendado: <strong>1000
+                                                                            produtos</strong>)</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProducAdd</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>group_sale_required</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Venda em combo
+                                                                        obrigatória</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">object</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>parent_skus</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de skus pais</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 16</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna a lista de lotes de importação para consulta do processo.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/imports/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é possível consultar os lotes de importação
+                                                        enviados
+                                                        para o App Super. Deve-se fornecer obrigatoriamente
+                                                        identificador único
+                                                        do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) e
+                                                        opcionalmente um
+                                                        parâmetro
+                                                        de paginação para o resultado como querystring.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>Caso os parâmetros de consulta sejam válidos esse endpoint
+                                                        retorna o
+                                                        objeto da
+                                                        Tabela 17.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Pagination</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>count</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Número de Itens por
+                                                                        página</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>next</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página seguinte
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>previous</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página anterior
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [ProductBulk]</td>
+                                                                    <td style="text-align:left"><strong>results</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Resultado da consulta
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductBulk</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        lote</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>market</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>error</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Mensagem de erro</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>completed_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Iportação completada às
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_count</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade de produtos
+                                                                        criados
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_count</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade de produtos
+                                                                        atualizados</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>processed</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Importação foi
+                                                                        processada</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 17</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna os detalhes de um lote de importação específico.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/imports/{id}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é possível consultar um lote específico de
+                                                        importação enviado para o App Super. Deve-se fornecer
+                                                        obrigatoriamente
+                                                        identificador único do estabelecimento
+                                                        (<strong><em>market_id</em></strong>) e o
+                                                        identificador único (<strong><em>id</em></strong>) do lote que
+                                                        você quer
+                                                        consultar.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>Caso os parâmetros de consulta sejam válidos esse endpoint
+                                                        retorna o
+                                                        objeto da
+                                                        Tabela 18.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Pagination</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>count</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Número de Itens por
+                                                                        página</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>next</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página seguinte
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>previous</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página anterior
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [ProductBulk]</td>
+                                                                    <td style="text-align:left"><strong>results</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Resultado da consulta
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>ProductBulk</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        lote</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>market</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>error</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Mensagem de erro</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>completed_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Iportação completada às
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_count</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade de produtos
+                                                                        criados
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_count</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade de produtos
+                                                                        atualizados</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>processed</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Importação foi
+                                                                        processada</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 18</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna detalhes de um produto específico pelo identificador único do mesmo
+                                            ( id ).
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/{id}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer
+                                                        consultar o produto, e o identificador único
+                                                        (<strong><em>id</em></strong>) do
+                                                        produto a ser consultado.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 19 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint caso os parâmetros fornecidos para a consulta sejam
+                                                        válidos.
+                                                    </p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Product</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">JSON</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>description</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">JSON Example:<br>
+                                                                        <code>{&quot;name&quot;:
+                                                                            &quot;Laticinios&quot;, &quot;parent&quot;:
+                                                                            {&quot;name&quot;:
+                                                                            &quot;Frios&quot;}}</code>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 19</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: #fca130;"><strong>&nbsp PUT
+                                                    &nbsp</strong></mark> &nbsp
+                                            Atualiza um produto especificado pelo id.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/{id}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer
+                                                        atualizar o produto, e o identificador único
+                                                        (<strong><em>id</em></strong>) do
+                                                        produto a ser consultado, além do objeto da Tabela 20 no corpo
+                                                        da
+                                                        requisição.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Product</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">JSON</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>description</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">JSON Example:<br>
+                                                                        <code>{&quot;name&quot;:
+                                                                            &quot;Laticinios&quot;, &quot;parent&quot;:
+                                                                            {&quot;name&quot;:
+                                                                            &quot;Frios&quot;}}</code>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 20</em></strong></p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 21 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint caso os parâmetros fornecidos para a atualização sejam
+                                                        válidos.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Product</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(UUID4)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>id</strong></td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        produto
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>created_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Criado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(date-time)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>updated_at</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Atualizado às</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>name</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome do produto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>amount_in_stock</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Quantidade em estoque
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>barcode</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código de barras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(decimal)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>low_price</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Preço com desconto</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>physical_location</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Localização no
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left"><strong>sku</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Código reduzido do
+                                                                        produto (SKU)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Category</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">JSON</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>description</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">JSON Example:<br>
+                                                                        <code>{&quot;name&quot;:
+                                                                            &quot;Laticinios&quot;, &quot;parent&quot;:
+                                                                            {&quot;name&quot;:
+                                                                            &quot;Frios&quot;}}</code>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 21</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+
+
+
+                                    <details>
+                                        <summary> <mark style="background-color: #f93e3e"><strong>&nbsp DELETE
+                                                    &nbsp</strong></mark> &nbsp
+                                            Deleta um produto de um estabelecimento específico pelo seu id.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{market_id}/product/{id}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é obrigatório o fornecimento do identificador
+                                                        único do
+                                                        estabelecimento (<strong><em>market_id</em></strong>) para o
+                                                        qual você
+                                                        quer deletar
+                                                        um produto, e o identificador único
+                                                        (<strong><em>id</em></strong>) do
+                                                        produto a ser
+                                                        deletado.</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_204_NO_CONTENT )</h5>
+                                                    <p>Caso a remoção do produto seja bem sucedida esse endpoint retorna
+                                                        o
+                                                        status
+                                                        <strong>HTTP_204_NO_CONTENT</strong>.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer" class="footer text-center">
+                <div class="container">
+                    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                    <small class="copyright">© 2020 Super. Todos os direitos reservados.</small>
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+
+            <!-- Main Javascript -->
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-3.4.1.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/bootstrap/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/prism/prism.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/stickyfill/dist/stickyfill.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/js/main.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

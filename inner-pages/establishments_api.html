@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Documentação Super API</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../app-assets/images/logo/logo-light.png">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="../assets/documentation/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="../assets/documentation/plugins/prism/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/documentation/css/styles.css">
+
+
+
+</head>
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="https://appsuper.github.io/documentation/">
+
+                            <h2 class="branding text-bold"><img src="../app-assets/images/logo/logo-light.png">&nbsp App
+                                Super</h2>
+                        </a>
+                    </h1>
+
+                </div>
+                <!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="https://parceiro.appsuper.com.br/">Parceiro</a></li>
+                    <li class="breadcrumb-item active">Documentação</li>
+                </ol>
+
+                <!-- <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div> -->
+
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container" style="min-height: 800px;">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class='fas fa-paper-plane'></i> Documentação API</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última Atualização: 16 de Outubro, 2020</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+
+
+                    <!--//doc-left-navlist-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link " href="../index.html">Introdução</a>
+                                <a class="nav-link" href="./inner-pages/initial-info.html">Informações Iniciais</a>
+                                <a class="nav-link" href="./inner-pages/authentication.html">Autenticação</a>
+                                <a class="nav-link" href="./inner-pages/environments.html">Ambiente de Desenvolvimento</a>
+                                <a class="nav-link" href="#">API de Estabelecimentos</a>
+                                <a class="nav-link" href="./inner-pages/orders_api.html">API de Pedidos</a>
+                                <a class="nav-link" href="./inner-pages/products_api.html">API de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/super_sale.html">Integração com a
+                                    Super Promoção</a>
+                                <a class="nav-link" href="./inner-pages/products.html">Importação de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/payment.html">Fluxo de Pagamentos</a>
+                                <a class="nav-link" href="./inner-pages/product_orderitem.html">Diferença entre Product e
+                                    OrderItem</a>
+                                <a class="nav-link" href="./inner-pages/reference_table.html">Tabelas de Referência </a>
+                                 
+                            </nav>
+                            <!--//doc-menu-->
+
+                        </div>
+                    </div>
+                    <!--//doc-left-navlist-->
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+
+                            <section id="api-estabelecimentos" class="doc-section">
+                                <h2 class="section-title">API de Estabelecimentos</h2>
+                                <div class="section-block">
+
+                                    <p>Na plataforma do App Super, cada parceiro pode ter diversos estabelecimentos.
+                                        Nessa API você pode ter acesso às informações refentes aos mesmos.</p>
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna lista de estabelecimentos do parceiro.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/ </code></p>
+                                                </div>
+
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Se necessário é possível fornecer como dado de entrada para esse
+                                                        endpoint
+                                                        um parâmetro querystring de paginação para o resultado, por
+                                                        padrão
+                                                        os resultados são mostrados com <strong>paginação de 100
+                                                            itens</strong>.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 1 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <strong>Pagination</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>count</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Número de Itens por
+                                                                        página</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left"><strong>next</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página seguinte
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong>previous</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Url da página anterior
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">list [Market]</td>
+                                                                    <td style="text-align:left"><strong>results</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Lista de
+                                                                        estabelecimentos</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left"><strong>Market</strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">-</td>
+                                                                    <td style="text-align:left">-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string (uuid)</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em><em>id</em></em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>company_name</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome empressarial</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>trading_name</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome Fantasia</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>logo</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Logomarca do
+                                                                        estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string <br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>image</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Foto de fachada do
+                                                                        estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>cnpj</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">cnpj do estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>full_address</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Endereço completo</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>city</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">cidade</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        string<br><em>(Enum)</em></td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>state</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Estado</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>street</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Rua</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>number</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Número do establecimento
+                                                                        na rua</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>district</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Bairro</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>zipcode</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">CEP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>complement</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Complemento do endereço
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>coordinate</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Coordenadas no GPS</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>email</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Email do Estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>phone</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Telefone do
+                                                                        Estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>conference_required</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Processo de conferência
+                                                                        obrigatório <sup class="footnote-ref"><a
+                                                                                href="#fn2" id="fnref2">[2]</a></sup>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>password_required_cancelling_order</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Requer senha de gerente
+                                                                        ao cancelar um pedido via
+                                                                        ocorrência</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 1</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+
+                                    </details>
+                                    <details>
+                                        <summary> <mark style="background-color: lightblue"><strong>&nbsp GET
+                                                    &nbsp</strong></mark> &nbsp
+                                            Retorna detalhes de um estabelecimento específico.
+                                            <strong>
+                                                <div class="code-block ">
+                                                    <p> <code>/market/{id}/
+                                                        </code></p>
+                                                </div>
+                                            </strong>
+                                        </summary>
+                                        <div class="endpoint-detail-bordered">
+                                            <ul>
+                                                <li>
+                                                    <h5>Parâmetros de Entrada</h5>
+                                                    <p>Neste endpoint é necessário fornecer como entrada o identificador
+                                                        único
+                                                        do
+                                                        estabelecimento (<strong><em>id</em></strong>).</p>
+                                                </li>
+                                                <li>
+                                                    <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                    <p>A Tabela 2 mostra a referência aos parâmetros inclusos na
+                                                        resposta desse
+                                                        endpoint.</p>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="text-align:left">Objeto</th>
+                                                                    <th style="text-align:left">Parâmetro</th>
+                                                                    <th style="text-align:left">Descrição</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(uuid)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em><em>id</em></em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Identificador único do
+                                                                        estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>company_name</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome empressarial</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>trading_name</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Nome Fantasia</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>logo</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Logomarca do
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(URI)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>image</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Foto de fachada do
+                                                                        estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>cnpj</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">cnpj do estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>full_address</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Endereço completo</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>city</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">cidade</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string<br>
+                                                                        <em>(Enum)</em>
+                                                                    </td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>state</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Estado</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>street</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Rua</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">integer</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>number</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Número do establecimento
+                                                                        na rua
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>district</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Bairro</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>zipcode</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">CEP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>complement</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Complemento do endereço
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>coordinate</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Coordenadas no GPS</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>email</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Email do Estabelecimento
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">string</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>phone</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Telefone do
+                                                                        Estabelecimento</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>conference_required</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Processo de conferência
+                                                                        obrigatório
+                                                                        <sup class="footnote-ref"><a href="#fn2"
+                                                                                id="fnref2:1">[2:1]</a></sup>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left">boolean</td>
+                                                                    <td style="text-align:left">
+                                                                        <strong><em>password_required_cancelling_order</em></strong>
+                                                                    </td>
+                                                                    <td style="text-align:left">Requer senha de gerente
+                                                                        ao
+                                                                        cancelar
+                                                                        um pedido via
+                                                                        ocorrência</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p><strong><em>Tabela 2</em></strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </section>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer" class="footer text-center">
+                <div class="container">
+                    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                    <small class="copyright">© 2020 Super. Todos os direitos reservados.</small>
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+
+            <!-- Main Javascript -->
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-3.4.1.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/bootstrap/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/prism/prism.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/stickyfill/dist/stickyfill.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/js/main.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

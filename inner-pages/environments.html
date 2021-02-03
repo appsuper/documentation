@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Documentação Super API</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../app-assets/images/logo/logo-light.png">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="../assets/documentation/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="../assets/documentation/plugins/prism/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/documentation/css/styles.css">
+
+
+
+</head>
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="https://appsuper.github.io/documentation/">
+
+                            <h2 class="branding text-bold"><img src="../app-assets/images/logo/logo-light.png">&nbsp App
+                                Super</h2>
+                        </a>
+                    </h1>
+
+                </div>
+                <!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="https://parceiro.appsuper.com.br/">Parceiro</a></li>
+                    <li class="breadcrumb-item active">Documentação</li>
+                </ol>
+
+                <!-- <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div> -->
+
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container" style="min-height: 800px;">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class='fas fa-paper-plane'></i> Documentação API</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última Atualização: 16 de Outubro, 2020</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+
+
+                    <!--//doc-left-navlist-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link " href="../index.html">Introdução</a>
+                                <a class="nav-link" href="./inner-pages/initial-info.html">Informações Iniciais</a>
+                                <a class="nav-link" href="./inner-pages/authentication.html">Autenticação</a>
+                                <a class="nav-link" href="#">Ambiente de Desenvolvimento</a>
+                                <a class="nav-link" href="./inner-pages/establishments_api.html">API de Estabelecimentos</a>
+                                <a class="nav-link" href="./inner-pages/orders_api.html">API de Pedidos</a>
+                                <a class="nav-link" href="./inner-pages/products_api.html">API de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/super_sale.html">Integração com a
+                                    Super Promoção</a>
+                                <a class="nav-link" href="./inner-pages/products.html">Importação de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/payment.html">Fluxo de Pagamentos</a>
+                                <a class="nav-link" href="./inner-pages/product_orderitem.html">Diferença entre Product e
+                                    OrderItem</a>
+                                <a class="nav-link" href="./inner-pages/reference_table.html">Tabelas de Referência </a>
+                                 
+                            </nav>
+                            <!--//doc-menu-->
+
+                        </div>
+                    </div>
+                    <!--//doc-left-navlist-->
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+
+                            <section id="ambiente-de-dev" class="doc-section">
+                                <h2 class="section-title">Ambiente de Desenvolvimento</h2>
+                                <div class="section-block">
+
+                                    <p>O App Super fornece um ambiente de desenvolvimento para testes e homologação do
+                                        fluxo de trabalho. Você pode acessar esses ambientes por meio dos domínios:</p>
+                                    <ul>
+                                        <li>Desenvolvimento: <a
+                                                href="http://parceiro.dev.appsuper.com.br/">http://parceiro.dev.appsuper.com.br/</a>
+                                        </li>
+                                        <li>Produção: <a href="https://parceiro.appsuper.com.br/">
+                                                https://parceiro.appsuper.com.br/</a></li>
+                                    </ul>
+                                    <p>Exemplo:</p>
+
+                                    <pre data-role="codeBlock" data-info class="language-">$ curl -H 'Api-Token: YOUR_API_TOKEN_HERE' -H 'Api-Secret-Key: YOUR_API_SECRET_KEY_HERE' http://plataforma.dev.appsuper.com.br/market/
+                                    </pre>
+
+
+                                </div>
+                            </section>
+
+                            <div class="callout-block callout-danger">
+                                <div class="icon-holder">
+                                    <svg class="svg-inline--fa fa-exclamation-triangle fa-w-18" aria-hidden="true"
+                                        focusable="false" data-prefix="fas" data-icon="exclamation-triangle" role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
+                                        <path fill="currentColor"
+                                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">
+                                        </path>
+                                    </svg>
+                                    <!-- <i class="fas fa-exclamation-triangle"></i> Font Awesome fontawesome.com -->
+                                </div>
+                                <div class="content">
+                                    <h4 class="callout-title">Atenção</h4>
+                                    <p>Para acionar os nossos endpoints de forma satisfatória, é necessário adicionar a
+                                        barra ("/")
+                                        no final das urls de cada endpoint, por
+                                        exemplo<code>/market/{market_id}/order/</code> </p>
+                                </div>
+                                <!--//content-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer" class="footer text-center">
+                <div class="container">
+                    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                    <small class="copyright">© 2020 Super. Todos os direitos reservados.</small>
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+
+            <!-- Main Javascript -->
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-3.4.1.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/bootstrap/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/prism/prism.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/stickyfill/dist/stickyfill.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/js/main.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

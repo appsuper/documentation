@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Documentação Super API</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../app-assets/images/logo/logo-light.png">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="../assets/documentation/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../assets/documentation/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="../assets/documentation/plugins/prism/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/documentation/css/styles.css">
+
+
+
+</head>
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="https://appsuper.github.io/documentation/">
+
+                            <h2 class="branding text-bold"><img src="../app-assets/images/logo/logo-light.png">&nbsp App
+                                Super</h2>
+                        </a>
+                    </h1>
+
+                </div>
+                <!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="https://parceiro.appsuper.com.br/">Parceiro</a></li>
+                    <li class="breadcrumb-item active">Documentação</li>
+                </ol>
+
+                <!-- <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div> -->
+
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container" style="min-height: 800px;">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class='fas fa-paper-plane'></i> Documentação API</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última Atualização: 16 de Outubro, 2020</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+
+
+                    <!--//doc-left-navlist-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link " href="../index.html">Introdução</a>
+                                <a class="nav-link" href="./inner-pages/initial-info.html">Informações Iniciais</a>
+                                <a class="nav-link" href="./inner-pages/authentication.html">Autenticação</a>
+                                <a class="nav-link" href="./inner-pages/environments.html">Ambiente de Desenvolvimento</a>
+                                <a class="nav-link" href="./inner-pages/establishments_api.html">API de Estabelecimentos</a>
+                                <a class="nav-link" href="./inner-pages/orders_api.html">API de Pedidos</a>
+                                <a class="nav-link" href="./inner-pages/products_api.html">API de Produtos</a>
+                                <a class="nav-link" href="#">Integração com a
+                                    Super Promoção</a>
+                                <a class="nav-link" href="./inner-pages/products.html">Importação de Produtos</a>
+                                <a class="nav-link" href="./inner-pages/payment.html">Fluxo de Pagamentos</a>
+                                <a class="nav-link" href="./inner-pages/product_orderitem.html">Diferença entre Product e
+                                    OrderItem</a>
+                                <a class="nav-link" href="./inner-pages/reference_table.html">Tabelas de Referência </a>
+                                 
+                            </nav>
+                            <!--//doc-menu-->
+
+                        </div>
+                    </div>
+                    <!--//doc-left-navlist-->
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="integracao-com-a-super-promocao" class="doc-section">
+                                <h2 class="section-title">
+                                    Integração com a Super Promoção</h2>
+
+                                <p>Disponibilizamos acesso à Super Promoção or meio dos dois endpoint
+                                    listados abaixo.</p>
+                                <details>
+                                    <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
+                                                &nbsp</strong></mark> &nbsp Retorna a lista de coupon (produtos
+                                        disponíveis para resgate) de um usuário específico.
+                                        <strong>
+                                            <div class="code-block ">
+                                                <p> <code>/v2/supersale/check-coupon/
+                                                    </code></p>
+                                            </div>
+                                        </strong>
+                                    </summary>
+                                    <div class="endpoint-detail-bordered">
+                                        <ul>
+                                            <li>
+                                                <h5>Parâmetros de Entrada</h5>
+                                                <p>Este endpoint fornece a lista de produtos que um cpf tem para
+                                                    resgatar em
+                                                    um estabelecimento participante da Super Promoção. Deve-se
+                                                    enviar o objeto da Tabela 22 no corpo da requisição.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th style="text-align:left">Objeto</th>
+                                                            <th style="text-align:left">Parâmetro</th>
+                                                            <th style="text-align:left">Descrição</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left"><strong>CouponCheck</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário para checagem
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 22</em></strong></p>
+                                            </li>
+                                            <li>
+                                                <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                <p>A Tabela 23 mostra a referência aos parâmetros inclusos na
+                                                    resposta desse endpoint.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="text-align:left">Objeto</th>
+                                                                <th style="text-align:left">Parâmetro</th>
+                                                                <th style="text-align:left">Descrição</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left"><strong>Product</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br></td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br></td>
+                                                                <td style="text-align:left">
+                                                                    <strong>product_code</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Código do Produto (EAN ou
+                                                                    SKU)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br><em>(decimal)</em>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>max_amount</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Quantidade máxima</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 23</em></strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </details>
+                                <details>
+                                    <summary> <mark style="background-color: lightgreen"><strong>&nbsp POST
+                                                &nbsp</strong></mark> &nbsp Marca um coupon como utilizado.
+                                        <strong>
+                                            <div class="code-block ">
+                                                <p> <code>/v2/supersale/confirm-coupon/</code></p>
+                                            </div>
+                                        </strong>
+                                    </summary>
+                                    <div class="endpoint-detail-bordered">
+                                        <ul>
+                                            <li>
+                                                <h5>Parâmetros de Entrada</h5>
+                                                <p>Por meio desse endpoint é possível marcar como usados os
+                                                    coupons de um determinado CPF. É necessário o envio do objeto
+                                                    descrito na Tabela 24 no corpo da requiisição.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="text-align:left">Objeto</th>
+                                                                <th style="text-align:left">Parâmetro</th>
+                                                                <th style="text-align:left">Descrição</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponConfirmUse</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário para checagem
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponProduct</strong>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>products</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left">
+                                                                    <strong>product_code</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Código do produto (EAN ou
+                                                                    SKU)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br>
+                                                                    <em>(decimal)</em>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>amount</strong></td>
+                                                                <td style="text-align:left">Quantidade do produto</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 24</em></strong></p>
+                                            </li>
+                                            <li>
+                                                <h5>Resposta ( status_code = HTTP_200_OK )</h5>
+                                                <p>A Tabela 25 mostra a referência aos parâmetros inclusos na
+                                                    resposta desse endpoint.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="text-align:left">Objeto</th>
+                                                                <th style="text-align:left">Parâmetro</th>
+                                                                <th style="text-align:left">Descrição</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponConfirmUse</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left"><strong>cpf</strong></td>
+                                                                <td style="text-align:left">CPF do usuário para checagem
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">
+                                                                    <strong>CouponProduct</strong>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>products</strong>
+                                                                </td>
+                                                                <td style="text-align:left">-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string</td>
+                                                                <td style="text-align:left">
+                                                                    <strong>product_code</strong>
+                                                                </td>
+                                                                <td style="text-align:left">Código do produto (EAN ou
+                                                                    SKU)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left">string<br>
+                                                                    <em>(decimal)</em>
+                                                                </td>
+                                                                <td style="text-align:left"><strong>amount</strong></td>
+                                                                <td style="text-align:left">Qauntidade do produto</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p><strong><em>Tabela 25</em></strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </details>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer" class="footer text-center">
+                <div class="container">
+                    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                    <small class="copyright">© 2020 Super. Todos os direitos reservados.</small>
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+
+            <!-- Main Javascript -->
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-3.4.1.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/bootstrap/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/prism/prism.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/jquery-scrollTo/jquery.scrollTo.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/plugins/stickyfill/dist/stickyfill.min.js">
+            </script>
+            <script type="text/javascript" src="../assets/documentation/js/main.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
